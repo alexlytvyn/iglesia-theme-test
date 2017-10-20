@@ -1,17 +1,18 @@
 <?php
 /**
  * Get current theme options
- * 
+ *
  * @return array
  */
-function aletheme_get_options() {
-	$comments_style = array(
-		'wp'  => 'Alethemes Comments',
-		'fb'  => 'Facebook Comments',
-		'dq'  => 'DISQUS',
-		'lf'  => 'Livefyre',
-		'off' => 'Disable All Comments',
-	);
+function aletheme_get_options()
+{
+    $comments_style = array(
+        'wp'  => 'Alethemes Comments',
+        'fb'  => 'Facebook Comments',
+        'dq'  => 'DISQUS',
+        'lf'  => 'Livefyre',
+        'off' => 'Disable All Comments',
+    );
 
     $headerfont = array_merge(ale_get_safe_webfonts(), ale_get_google_webfonts());
 
@@ -23,13 +24,13 @@ function aletheme_get_options() {
         'attachment'=>'scroll'
     );
 
-	
-	$imagepath =  ALETHEME_URL . '/assets/images/';
-	
-	$options = array();
-		
-	$options[] = array("name" => "Theme",
-						"type" => "heading");
+
+    $imagepath =  ALETHEME_URL . '/assets/images/';
+
+    $options = array();
+
+    $options[] = array("name" => "Theme",
+                        "type" => "heading");
 
     $options[] = array( "name" => "Site Logo",
                         "desc" => "Upload or put the site logo link (Default logo size: 133-52px)",
@@ -61,24 +62,24 @@ function aletheme_get_options() {
                         "std" => "",
                         "type" => "upload");
 
-	$options[] = array( "name" => "Comments Style",
-						"desc" => "Choose your comments style. If you want to use DISQUS comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Disqus+Comment+System&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.  If you want to use Livefyre Realtime Comments comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Livefyre+Realtime+Comments&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.",
-						"id" => "ale_comments_style",
-						"std" => "wp",
-						"type" => "select",
-						"options" => $comments_style);
+    $options[] = array( "name" => "Comments Style",
+                        "desc" => "Choose your comments style. If you want to use DISQUS comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Disqus+Comment+System&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.  If you want to use Livefyre Realtime Comments comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Livefyre+Realtime+Comments&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.",
+                        "id" => "ale_comments_style",
+                        "std" => "wp",
+                        "type" => "select",
+                        "options" => $comments_style);
 
-	$options[] = array( "name" => "AJAX Comments",
-						"desc" => "Use AJAX on comments posting (works only with Alethemes Comments selected).",
-						"id" => "ale_ajax_comments",
-						"std" => "1",
-						"type" => "checkbox");
+    $options[] = array( "name" => "AJAX Comments",
+                        "desc" => "Use AJAX on comments posting (works only with Alethemes Comments selected).",
+                        "id" => "ale_ajax_comments",
+                        "std" => "1",
+                        "type" => "checkbox");
 
-	$options[] = array( "name" => "Social Sharing",
-						"desc" => "Enable social sharing for posts.",
-						"id" => "ale_social_sharing",
-						"std" => "1",
-						"type" => "checkbox");
+    $options[] = array( "name" => "Social Sharing",
+                        "desc" => "Enable social sharing for posts.",
+                        "id" => "ale_social_sharing",
+                        "std" => "1",
+                        "type" => "checkbox");
 
     $options[] = array( "name" => "Copyrights",
                         "desc" => "Your copyright message.",
@@ -171,37 +172,17 @@ function aletheme_get_options() {
                         'std' => array('size' => '11px','face' => 'Libre+Baskerville','style' => 'normal','color' => '#111111'),
                         'type' => 'typography');
 
-	$options[] = array( "name" => "Social",
-						"type" => "heading");
+    $options[] = array( "name" => "Social",
+                        "type" => "heading");
 
     $options[] = array( "name" => "Twitter",
                         "desc" => "Your twitter profile URL.",
                         "id" => "ale_twi",
                         "std" => "",
                         "type" => "text");
-	$options[] = array( "name" => "Facebook",
-						"desc" => "Your facebook profile URL.",
-						"id" => "ale_fb",
-						"std" => "",
-						"type" => "text");
-    $options[] = array( "name" => "Google+",
-                        "desc" => "Your google+ profile URL.",
-                        "id" => "ale_gog",
-                        "std" => "",
-                        "type" => "text");
-    $options[] = array( "name" => "Pinterest",
-                        "desc" => "Your pinteres profile URL.",
-                        "id" => "ale_pint",
-                        "std" => "",
-                        "type" => "text");
-    $options[] = array( "name" => "Flickr",
-                        "desc" => "Your flickr profile URL.",
-                        "id" => "ale_flickr",
-                        "std" => "",
-                        "type" => "text");
-    $options[] = array( "name" => "Linkedin",
-                        "desc" => "Your linked profile URL.",
-                        "id" => "ale_linked",
+    $options[] = array( "name" => "Facebook",
+                        "desc" => "Your facebook profile URL.",
+                        "id" => "ale_fb",
                         "std" => "",
                         "type" => "text");
     $options[] = array( "name" => "Instagram",
@@ -209,9 +190,9 @@ function aletheme_get_options() {
                         "id" => "ale_insta",
                         "std" => "",
                         "type" => "text");
-    $options[] = array( "name" => "Email",
-                        "desc" => "Your email",
-                        "id" => "ale_emailcont",
+    $options[] = array( "name" => "YouTube",
+                        "desc" => "YouTube Channel Link",
+                        "id" => "ale_yt",
                         "std" => "",
                         "type" => "text");
     $options[] = array( "name" => "Show RSS",
@@ -219,37 +200,35 @@ function aletheme_get_options() {
                         "id" => "ale_rssicon",
                         "std" => "1",
                         "type" => "checkbox");
+    $options[] = array( "name" => "Facebook Application ID",
+                        "desc" => "If you have Application ID you can connect the blog to your Facebook Profile and monitor statistics there.",
+                        "id" => "ale_fb_id",
+                        "std" => "",
+                        "type" => "text");
 
-	
-	$options[] = array( "name" => "Facebook Application ID",
-						"desc" => "If you have Application ID you can connect the blog to your Facebook Profile and monitor statistics there.",
-						"id" => "ale_fb_id",
-						"std" => "",
-						"type" => "text");
-	
-	$options[] = array( "name" => "Enable Open Graph",
-						"desc" => "The <a href=\"http://www.ogp.me/\">Open Graph</a> protocol enables any web page to become a rich object in a social graph.",
-						"id" => "ale_og_enabled",
-						"std" => "",
-						"type" => "checkbox");
+    $options[] = array( "name" => "Enable Open Graph",
+                        "desc" => "The <a href=\"http://www.ogp.me/\">Open Graph</a> protocol enables any web page to become a rich object in a social graph.",
+                        "id" => "ale_og_enabled",
+                        "std" => "",
+                        "type" => "checkbox");
 
 
-	
-	$options[] = array( "name" => "Advanced Settings",
-						"type" => "heading");
 
-	
-	$options[] = array( "name" => "Google Analytics",
-						"desc" => "Please insert your Google Analytics code here. Example: <strong>UA-22231623-1</strong>",
-						"id" => "ale_ga",
-						"std" => "",
-						"type" => "text");
-	
-	$options[] = array( "name" => "Footer Code",
-						"desc" => "If you have anything else to add in the footer - please add it here.",
-						"id" => "ale_footer_info",
-						"std" => "",
-						"type" => "textarea");
+    $options[] = array( "name" => "Advanced Settings",
+                        "type" => "heading");
+
+
+    $options[] = array( "name" => "Google Analytics",
+                        "desc" => "Please insert your Google Analytics code here. Example: <strong>UA-22231623-1</strong>",
+                        "id" => "ale_ga",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Footer Code",
+                        "desc" => "If you have anything else to add in the footer - please add it here.",
+                        "id" => "ale_footer_info",
+                        "std" => "",
+                        "type" => "textarea");
 
     $options[] = array( "name" => "Custom CSS Styles",
                         "desc" => "You can add here your styles. ex. .boxclass { padding:10px; }",
@@ -273,15 +252,16 @@ function aletheme_get_options() {
                             'image_2' => $imagepath.'/2cl.png',
                             'image_3' => $imagepath.'/2cr.png', ),
         );
-	
-	return $options;
+
+    return $options;
 }
 
 /**
  * Add custom scripts to Options Page
  */
-function aletheme_options_custom_scripts() {
- ?>
+function aletheme_options_custom_scripts()
+{
+    ?>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
@@ -295,16 +275,17 @@ jQuery(document).ready(function() {
 </script>
 
 <?php
+
 }
 
 /**
  * Add Metaboxes
  * @param array $meta_boxes
- * @return array 
+ * @return array
  */
-function aletheme_metaboxes($meta_boxes) {
-	
-	$meta_boxes = array();
+function aletheme_metaboxes($meta_boxes)
+{
+    $meta_boxes = array();
 
     $prefix = "ale_";
 
@@ -788,16 +769,17 @@ function aletheme_metaboxes($meta_boxes) {
         )
     );
 
-	return $meta_boxes;
+    return $meta_boxes;
 }
 
 /**
  * Get image sizes for images
- * 
+ *
  * @return array
  */
-function aletheme_get_images_sizes() {
-	return array(
+function aletheme_get_images_sizes()
+{
+    return array(
 
         'gallery' => array(
             array(
@@ -839,12 +821,13 @@ function aletheme_get_images_sizes() {
 }
 
 /**
- * Add post types that are used in the theme 
- * 
+ * Add post types that are used in the theme
+ *
  * @return array
  */
-function aletheme_get_post_types() {
-	return array(
+function aletheme_get_post_types()
+{
+    return array(
         'gallery' => array(
             'config' => array(
                 'public' => true,
@@ -884,11 +867,12 @@ function aletheme_get_post_types() {
 
 /**
  * Add taxonomies that are used in theme
- * 
+ *
  * @return array
  */
-function aletheme_get_taxonomies() {
-	return array(
+function aletheme_get_taxonomies()
+{
+    return array(
 
         'gallery-category'    => array(
             'for'        => array('gallery'),
@@ -927,48 +911,53 @@ function aletheme_get_taxonomies() {
 
 /**
  * Add post formats that are used in theme
- * 
+ *
  * @return array
  */
-function aletheme_get_post_formats() {
-	return array();
+function aletheme_get_post_formats()
+{
+    return array();
 }
 
 /**
  * Get sidebars list
- * 
+ *
  * @return array
  */
-function aletheme_get_sidebars() {
-	$sidebars = array();
-	return $sidebars;
+function aletheme_get_sidebars()
+{
+    $sidebars = array();
+    return $sidebars;
 }
 
 /**
  * Predefine custom sliders
  * @return array
  */
-function aletheme_get_sliders() {
-	return array(
-		'sneak-peek' => array(
-			'title'		=> 'Sneak Peek',
-		),
-	);
+function aletheme_get_sliders()
+{
+    return array(
+        'sneak-peek' => array(
+            'title'        => 'Sneak Peek',
+        ),
+    );
 }
 
 /**
  * Post types where metaboxes should show
- * 
+ *
  * @return array
  */
-function aletheme_get_post_types_with_gallery() {
-	return array('gallery');
+function aletheme_get_post_types_with_gallery()
+{
+    return array('gallery');
 }
 
 /**
  * Add custom fields for media attachments
  * @return array
  */
-function aletheme_media_custom_fields() {
-	return array();
+function aletheme_media_custom_fields()
+{
+    return array();
 }
