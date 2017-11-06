@@ -12,8 +12,10 @@
 
 <header class="top_header">
 	<div class="wrapper cf">
-		<div class="header_third search_section menu_button">
-			search
+		<div class="header_third search_section menu_button cf">
+			<div class="menu_icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			<div class="search_box"><?php echo get_search_form(); ?></div>
+
 		</div>
 		<div class="header_third logo_section">
 			<a href="<?php echo home_url("/"); ?>" class="logo_link"><img src="<?php echo ale_get_option('sitelogo'); ?>" alt="Sitelogo"></a>

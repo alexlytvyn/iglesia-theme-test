@@ -561,13 +561,71 @@ html[xmlns] .slides {
   display: block;
   width: 100%;
   height: 5px;
-  background: url(../img/bottom.png) repeat-x center center;
+  background: url("../img/bottom.png") repeat-x center center;
   position: absolute;
   top: 100%;
 }
 .top_header .header_third {
   width: 33.3%;
   float: left;
+}
+.top_header .header_third.search_section {
+  line-height: 105px;
+}
+.top_header .header_third.search_section .menu_icon {
+  display: inline-block;
+  float: left;
+  line-height: 110px;
+}
+.top_header .header_third.search_section .menu_icon i {
+  font-size: 20px;
+  color: #262626;
+  cursor: pointer;
+}
+.top_header .header_third.search_section .search_box {
+  display: inline-block;
+  float: left;
+  margin-left: 30px;
+}
+.top_header .header_third.search_section .search_box #searchform fieldset::before {
+  content: "\f002";
+  font: normal normal normal 12px/1 FontAwesome;
+  display: inline-block;
+  color: #d4dad9;
+  margin-right: 8px;
+}
+.top_header .header_third.search_section .search_box #searchsubmit {
+  display: none;
+}
+.top_header .header_third.search_section .search_box input.searchinput {
+  border: none;
+  font-size: 12px;
+  color: #959b9a;
+  font-style: italic;
+}
+.top_header .header_third.search_section .search_box input.searchinput::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #d4dad9;
+  font-size: 12px;
+  font-style: italic;
+}
+.top_header .header_third.search_section .search_box input.searchinput::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #d4dad9;
+  font-size: 12px;
+  font-style: italic;
+}
+.top_header .header_third.search_section .search_box input.searchinput:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #d4dad9;
+  font-size: 12px;
+  font-style: italic;
+}
+.top_header .header_third.search_section .search_box input.searchinput:-moz-placeholder {
+  /* Firefox 18- */
+  color: #d4dad9;
+  font-size: 12px;
+  font-style: italic;
 }
 .top_header .header_third.logo_section {
   text-align: center;
