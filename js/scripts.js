@@ -15,6 +15,18 @@ jQuery(function($) {
         controlNav: false
     });
 
+		$('.menu_icon i.fa-bars').on('click', function(event) {
+			$('.menu_icon i.fa-bars').hide();
+			$('.menu_icon i.fa-times').show();
+			$('.top_navigation').show();
+		});
+
+		$('.menu_icon i.fa-times').on('click', function(event) {
+			$('.menu_icon i.fa-times').hide();
+			$('.menu_icon i.fa-bars').show();
+			$('.top_navigation').hide();
+		});
+
 });
 
 Modernizr.addTest('ipad', function () {
@@ -387,4 +399,3 @@ jQuery(function($) {
         });
     }
 });
-

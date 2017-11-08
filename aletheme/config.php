@@ -195,6 +195,11 @@ function aletheme_get_options()
                         "id" => "ale_yt",
                         "std" => "",
                         "type" => "text");
+    // $options[] = array( "name" => "Donate",
+    //                     "desc" => "Donate Link",
+    //                     "id" => "donate_link",
+    //                     "std" => "",
+    //                     "type" => "text");
     $options[] = array( "name" => "Show RSS",
                         "desc" => "Check if you want to show the RSS icon on your site",
                         "id" => "ale_rssicon",
