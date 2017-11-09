@@ -109,30 +109,44 @@ function aletheme_get_options()
                         "type" => "heading");
 
     $options[] = array( "name" => "Select the body Font from Google Library",
-                        "desc" => "The default Font is - Raleway",
-                        "id" => "ale_headerfont",
-                        "std" => "Raleway",
+                        "desc" => "The default Font is - Droid Serif",
+                        "id" => "ale_mainfont",
+                        "std" => "Droid+Serif",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the body Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 600",
-                        "id" => "ale_headerfontex",
-                        "std" => "600",
+                        "desc" => "The default Font (extended)",
+                        "id" => "ale_mainfontex",
+                        "std" => "400,400i,700,700i",
+                        "type" => "text",
+                        );
+
+    $options[] = array( "name" => "Select the body Font 2 from Google Library",
+                        "desc" => "The default Font is - Playfair Display",
+                        "id" => "ale_thirdfont",
+                        "std" => "Playfair+Display",
+                        "type" => "select",
+                        "options" => $headerfont);
+
+    $options[] = array( "name" => "Select the body Font (Extended) from Google Library",
+                        "desc" => "The default Font (extended)",
+                        "id" => "ale_thirdfontex",
+                        "std" => "400",
                         "type" => "text",
                         );
 
     $options[] = array( "name" => "Select the Headers Font from Google Library",
-                        "desc" => "The default Font is - Libre Baskerville",
-                        "id" => "ale_mainfont",
-                        "std" => "Libre+Baskerville",
+                        "desc" => "The default Font is - Playfair Display SC",
+                        "id" => "ale_headerfont",
+                        "std" => "Playfair+Display+SC",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 400,400italic",
-                        "id" => "ale_mainfontex",
-                        "std" => "400,400italic",
+                        "desc" => "The default Font (extended)",
+                        "id" => "ale_headerfontex",
+                        "std" => "400,400i,700,700i,900,900i",
                         "type" => "text",
                         );
 

@@ -1099,7 +1099,7 @@ footer.main-footer .bottom_footer .footer_social i {
   text-align: center;
   color: #7f4258;
   font-size: 64px;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 45px;
   font-family: 'Playfair Display SC', serif;
 }
