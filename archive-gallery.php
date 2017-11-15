@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- Content -->
-<div class="container contacts">
+<div class="container archive_gallery">
 	<div class="wrapper">
 		<h2 class="page_title">Gallery</h2>
 		<div class="page_content gallery-page cf">
@@ -52,7 +52,7 @@
 				 ?>
 			</div>
 		</div>
-		<?php }; ?> 
+		<?php }; ?>
 	</div>
 </div>
 <?php get_footer(); ?>
