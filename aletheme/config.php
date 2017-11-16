@@ -6,14 +6,6 @@
  */
 function aletheme_get_options()
 {
-    $comments_style = array(
-        'wp'  => 'Alethemes Comments',
-        'fb'  => 'Facebook Comments',
-        'dq'  => 'DISQUS',
-        'lf'  => 'Livefyre',
-        'off' => 'Disable All Comments',
-    );
-
     $headerfont = array_merge(ale_get_safe_webfonts(), ale_get_google_webfonts());
 
     $background_defaults = array(
@@ -67,13 +59,6 @@ function aletheme_get_options()
                         "id" => "ale_favicon",
                         "std" => "",
                         "type" => "upload");
-
-    $options[] = array( "name" => "Comments Style",
-                        "desc" => "Choose your comments style. If you want to use DISQUS comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Disqus+Comment+System&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.  If you want to use Livefyre Realtime Comments comments please install and activate this plugin from <a href=\"" . admin_url('plugin-install.php?tab=search&type=term&s=Livefyre+Realtime+Comments&plugin-search-input=Search+Plugins') . "\">Wordpress Repository</a>.",
-                        "id" => "ale_comments_style",
-                        "std" => "wp",
-                        "type" => "select",
-                        "options" => $comments_style);
 
     $options[] = array( "name" => "AJAX Comments",
                         "desc" => "Use AJAX on comments posting (works only with Alethemes Comments selected).",
@@ -442,6 +427,7 @@ function aletheme_get_post_types()
                     'editor',
                     'thumbnail',
 										'excerpt',
+										'comments',
                 ),
                 'show_in_nav_menus'=> true,
             ),
