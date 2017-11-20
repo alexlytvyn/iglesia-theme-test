@@ -477,6 +477,11 @@ footer.main-footer {
 	min-height: 470px;
 	background: white url("../img/footer.png") bottom center no-repeat;
 
+	&.border-top-footer {
+		border-top: 1px solid #f2f2f2;
+		margin-top: 70px;
+	}
+
 	.top_footer {
 		min-height: 350px;
 
@@ -1146,6 +1151,16 @@ footer.main-footer {
 				.name {
 					font-size: 17px;
 					color: black;
+
+					a {
+						color: inherit;
+						.transition (all 300ms ease-in-out);
+
+						&:hover {
+							.opacity (0.75);
+							.transition (all 300ms ease-in-out);
+						}
+					}
 				}
 				.time {
 					font-size: 10px;

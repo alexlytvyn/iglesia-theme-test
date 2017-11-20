@@ -46,7 +46,7 @@
 		        } ?>
 		    </ul>
 	    </div>
-			<div class="post_content">
+			<div class="post_content story"> <!-- Клас story підключає оформлення цитат, списків і т.д. -->
 				<?php the_content(); ?>
 			</div>
 		<?php endwhile;  endif;  ?>
