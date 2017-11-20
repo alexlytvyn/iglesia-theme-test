@@ -84,6 +84,11 @@ function ale_enqueue_scripts() {
 	wp_enqueue_script( 'ale_modernizr' );
 	wp_enqueue_script( 'html5-shim' );
 
+	if (is_post_type_archive('events')) {
+		wp_enqueue_script( 'masonry' );
+	}
+
+
     wp_register_script( 'jquery.mousewheel', THEME_URL . '/js/libs/jquery.mousewheel.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
     wp_register_script( 'jquery.fancybox', THEME_URL . '/js/libs/jquery.fancybox-1.3.4.pack.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
     wp_register_script( 'jquery.jscrollpane.min', THEME_URL . '/js/libs/jquery.jscrollpane.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );

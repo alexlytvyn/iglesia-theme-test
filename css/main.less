@@ -1330,7 +1330,84 @@ footer.main-footer {
 		input[type="url"] {
 			margin-left: 15px;
 		}
-
-
 	}
+}
+/* Events Page Styles */
+
+.ale_events_page {
+  .events_categories {
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 50px;
+
+    .event_category_link {
+      display: block;
+      padding-bottom: 30px;
+      margin-right: 25px;
+      margin-left: 25px;
+      padding-top: 5px;
+      color:#b3b3b3;
+      border-bottom: 2px solid transparent;
+      font-size: 11px;
+      font-family: Arial, Helvetica, sans-serif;
+      .transition(all 300ms ease-in-out);
+
+      &:hover {
+        color: #838383;
+        border-bottom: 2px solid @color_yellow_font;
+        .transition(all 300ms ease-in-out);
+      }
+    }
+
+    .taxlist {
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          &.active {
+            a {
+              color: #838383;
+              border-bottom: 2px solid @color_yellow_font;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .events_list {
+
+    .item_event {
+      width: ~"calc(33.3% - 20px)";
+      margin: 0 10px;
+      float: left;
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f2f2f2;
+
+      .event_post_date {
+        color: #b3b3b3;
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h3 {
+        text-transform: none;
+        font-size: 13px;
+        color: black;
+        line-height: 20px;
+        margin-bottom: 15px;
+
+        a {
+          color:inherit;
+          .transition(all 100ms ease-in-out);
+
+          &:hover {
+            color: @color_inner_header;
+            text-decoration: underline;
+            .transition(all 100ms ease-in-out);
+          }
+        }
+      }
+    }
+  }
 }
