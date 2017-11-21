@@ -370,7 +370,163 @@ function aletheme_metaboxes($meta_boxes)
                 'id'   => $prefix . 'email',
                 'type' => 'text',
             ),
+        )
+    );
 
+    $meta_boxes[] = array(
+        'id'         => 'about_page_metabox',
+        'title'      => 'About Page Options',
+        'pages'      => array( 'page', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        'show_on'    => array( 'key' => 'page-template', 'value' => array('template-about.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            array(
+                'name' => 'Show Info Box',
+                'desc' => 'Select if you want the infobox',
+                'id'   => $prefix . 'info_display',
+                'type' => 'select',
+								'options' => array(
+									array('name' => 'Show Block', 'value' => 'show'),
+									array('name' => 'Hide Block', 'value' => 'hide'),
+								)
+            ),
+
+            array(
+                'name' => 'Show Services Box',
+                'desc' => 'Select if you want the dervices box',
+                'id'   => $prefix . 'services_display',
+                'type' => 'select',
+								'options' => array(
+									array('name' => 'Show Block', 'value' => 'show'),
+									array('name' => 'Hide Block', 'value' => 'hide'),
+								)
+            ),
+
+            array(
+                'name' => 'Show Our People Box',
+                'desc' => 'Select if you want the "Our People" box',
+                'id'   => $prefix . 'our_people_display',
+                'type' => 'select',
+								'options' => array(
+									array('name' => 'Show Block', 'value' => 'show'),
+									array('name' => 'Hide Block', 'value' => 'hide'),
+								)
+            ),
+
+            array(
+                'name' => 'Title for Info Section',
+                'desc' => 'Insert the title info',
+                'id'   => $prefix . 'info_title',
+								'std' => 'The generated Lorem Ipsum is therefore always free from...',
+                'type' => 'text',
+            ),
+
+            array(
+                'name' => 'Description for Info Section',
+                'desc' => 'Insert the title text',
+                'id'   => $prefix . 'info_text',
+								'std' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standart dummy text ever since 1500s.',
+                'type' => 'textarea_code',
+            ),
+
+						array(
+								'name' => 'BG Image for Info Section',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'info_bg',
+								'std' => '',
+								'type' => 'file',
+						),
+
+						array(
+								'name' => 'Service Icon 1',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'service_icon_1',
+								'std' => '',
+								'type' => 'file',
+						),
+
+						array(
+								'name' => 'Service Text 1',
+								'desc' => 'Insert the title text',
+								'id'   => $prefix . 'service_text_1',
+								'std' => 'Lorem Ipsum has been the industry\'s standart dummy text ever since 1500s.',
+								'type' => 'textarea_code',
+						),
+
+						array(
+								'name' => 'Service Icon 2',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'service_icon_2',
+								'std' => '',
+								'type' => 'file',
+						),
+
+						array(
+								'name' => 'Service Text 2',
+								'desc' => 'Insert the title text',
+								'id'   => $prefix . 'service_text_2',
+								'std' => 'Lorem Ipsum has been the industry\'s standart dummy text ever since 1500s.',
+								'type' => 'textarea_code',
+						),
+
+						array(
+								'name' => 'Service Icon 3',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'service_icon_3',
+								'std' => '',
+								'type' => 'file',
+						),
+
+						array(
+								'name' => 'Service Text 3',
+								'desc' => 'Insert the title text',
+								'id'   => $prefix . 'service_text_3',
+								'std' => 'Lorem Ipsum has been the industry\'s standart dummy text ever since 1500s.',
+								'type' => 'textarea_code',
+						),
+
+						array(
+								'name' => 'Service Icon 4',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'service_icon_4',
+								'std' => '',
+								'type' => 'file',
+						),
+
+						array(
+								'name' => 'Service Text 4',
+								'desc' => 'Insert the title text',
+								'id'   => $prefix . 'service_text_4',
+								'std' => 'Lorem Ipsum has been the industry\'s standart dummy text ever since 1500s.',
+								'type' => 'textarea_code',
+						),
+
+						array(
+                'name' => 'Title for Our People',
+                'desc' => 'Insert the title info',
+                'id'   => $prefix . 'our_people_title',
+								'std' => 'Our People',
+                'type' => 'text',
+            ),
+
+            array(
+                'name' => 'Description for Our People',
+                'desc' => 'Insert the people text',
+                'id'   => $prefix . 'our_people_text',
+								'std' => 'Lorem Ipsum is simply dummy text',
+                'type' => 'text',
+            ),
+
+						array(
+								'name' => 'BG Image for Our People',
+								'desc' => 'Upload or select an image',
+								'id'   => $prefix . 'our_peole_bg',
+								'std' => '',
+								'type' => 'file',
+						),
         )
     );
 
@@ -453,21 +609,20 @@ function aletheme_get_post_types()
             'singular' => 'Event',
             'multiple' => 'Events',
         ),
-        'services' => array(
+        'people' => array(
             'config' => array(
                 'public' => true,
                 'menu_position' => 20,
-                'menu_icon' => 'dashicons-format-audio',
                 'has_archive'   => true,
                 'supports'=> array(
                     'title',
                     'editor',
-                    'thumbnail',
+										'excerpt'
                 ),
                 'show_in_nav_menus'=> true,
             ),
-            'singular' => 'Сервис',
-            'multiple' => 'Сервисы'
+            'singular' => 'People',
+            'multiple' => 'People',
         ),
     );
 }
