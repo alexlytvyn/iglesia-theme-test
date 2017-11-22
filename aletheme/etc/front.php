@@ -42,8 +42,13 @@ function ale_enqueue_styles() {
 	// add general css file
 	wp_register_style( 'aletheme_general_css', THEME_URL . '/css/general.css', array(), ALETHEME_THEME_VERSION, 'all');
 	wp_register_style( 'aletheme_fontawesome', THEME_URL . '/css/font-awesome.min.css', array(), ALETHEME_THEME_VERSION, 'all'); // Реєструємо Font Awesome
+	wp_register_style( 'slick', THEME_URL . '/css/libs/slick.css', array(), ALETHEME_THEME_VERSION, 'all'); // Реєструємо Font Awesome
     wp_enqueue_style('aletheme_general_css');
     wp_enqueue_style('aletheme_fontawesome'); // Підключаємо Font Awesome
+
+		if (is_page_template('template-about.php')) {
+			wp_enqueue_style('slick'); // Підключаємо Slick Slider
+		}
 }
 add_action( 'wp_enqueue_scripts', 'ale_enqueue_styles' );
 
@@ -79,6 +84,7 @@ function ale_enqueue_scripts() {
 
     wp_register_script( 'ale_modules', THEME_URL . '/js/modules.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
     wp_register_script( 'ale_scripts', THEME_URL . '/js/scripts.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+		wp_register_script( 'slick', THEME_URL . '/js/libs/slick.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
 
 	wp_enqueue_script( 'jquery-form' );
 	wp_enqueue_script( 'ale_modernizr' );
@@ -86,6 +92,10 @@ function ale_enqueue_scripts() {
 
 	if (is_post_type_archive('events')) {
 		wp_enqueue_script( 'masonry' );
+	}
+
+	if (is_page_template('template-about.php')) {
+		wp_enqueue_script( 'slick' );
 	}
 
 

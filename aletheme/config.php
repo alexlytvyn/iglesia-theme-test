@@ -374,6 +374,26 @@ function aletheme_metaboxes($meta_boxes)
     );
 
     $meta_boxes[] = array(
+        'id'         => 'people_pages_metabox',
+        'title'      => 'People Options',
+        'pages'      => array( 'people', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        // 'show_on'    => array( 'key' => 'page-template', 'value' => array('template-contact.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            array(
+                'name' => 'Team Position',
+                'desc' => 'Enter the TP',
+                'id'   => $prefix . 'people_post',
+								'std' => 'Manager',
+                'type' => 'text',
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
         'id'         => 'about_page_metabox',
         'title'      => 'About Page Options',
         'pages'      => array( 'page', ), // Post type
@@ -523,7 +543,7 @@ function aletheme_metaboxes($meta_boxes)
 						array(
 								'name' => 'BG Image for Our People',
 								'desc' => 'Upload or select an image',
-								'id'   => $prefix . 'our_peole_bg',
+								'id'   => $prefix . 'our_people_bg',
 								'std' => '',
 								'type' => 'file',
 						),
@@ -559,6 +579,15 @@ function aletheme_get_images_sizes()
                 'name'      => 'gallery-bigkvadr',
                 'width'     => 470,
                 'height'    => 470,
+                'crop'      => true,
+            ),
+        ),
+
+        'people' => array(
+            array(
+                'name'      => 'people-user',
+                'width'     => 87,
+                'height'    => 87,
                 'crop'      => true,
             ),
         ),
@@ -617,6 +646,7 @@ function aletheme_get_post_types()
                 'supports'=> array(
                     'title',
                     'editor',
+										'thumbnail',
 										'excerpt'
                 ),
                 'show_in_nav_menus'=> true,

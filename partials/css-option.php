@@ -81,7 +81,7 @@ $ale_h6 = ale_get_option('h6sty');
     }
 
     /*Header Font*/
-		.font_one {
+		.font_one, h3.people_title {
 		        <?php if($ale_headerfont){ $headerfontname =  str_replace ('+',' ',$ale_headerfont); echo "font-family:".$headerfontname.";"; } ?>
 		    }
 
