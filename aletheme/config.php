@@ -550,6 +550,23 @@ function aletheme_metaboxes($meta_boxes)
         )
     );
 
+		$meta_boxes[] = array(
+        'id'         => 'sermons_metabox',
+        'title'      => 'Sermons Options',
+        'pages'      => array( 'sermons', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name' => 'The Date',
+                'desc' => 'Enter the sermon date',
+                'id'   => $prefix . 'sermons_date',
+                'type' => 'text_datetime_timestamp',
+            ),
+        )
+    );
+
     return $meta_boxes;
 }
 
@@ -588,6 +605,20 @@ function aletheme_get_images_sizes()
                 'name'      => 'people-user',
                 'width'     => 87,
                 'height'    => 87,
+                'crop'      => true,
+            ),
+        ),
+        'sermons' => array(
+            array(
+                'name'      => 'sermons-list',
+                'width'     => 306,
+                'height'    => 172,
+                'crop'      => true,
+            ),
+            array(
+                'name'      => 'sermons-biglist',
+                'width'     => 369,
+                'height'    => 226,
                 'crop'      => true,
             ),
         ),
@@ -653,6 +684,23 @@ function aletheme_get_post_types()
             ),
             'singular' => 'People',
             'multiple' => 'People',
+        ),
+				'sermons' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+										'excerpt',
+										'comments',
+										'thumbnail'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Sermon',
+            'multiple' => 'Sermons',
         ),
     );
 }
