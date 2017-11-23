@@ -28,15 +28,6 @@ jQuery(function($) {
     });
   }
 
-  // People Slider
-  $('.people_list').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    nextArrow: '.right_arrow .right',
-    prevArrow: '.left_arrow .left',
-  });
-
   $('.portfolioslider').flexslider({
     animation: 'slide',
     smoothHeight: true,
@@ -66,6 +57,15 @@ jQuery(function($) {
     $('.menu_icon i.fa-bars').show();
     $('.top_navigation').hide();
   });
+
+	//People Slider
+	$('.people_list').slick({
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			nextArrow: '.right_arrow .right',
+			prevArrow: '.left_arrow .left'
+	});
 
 });
 
